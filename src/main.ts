@@ -60,7 +60,7 @@ const temlpateData = {
           value: '[${$root.commit.message}](${$root.commit.html_url})'
         },
         {
-          title: '${$root.event_name}',
+          title: '${$root.event.type}',
           value: '[${$root.event.html_url}](${$root.event.html_url})'
         },
         {
