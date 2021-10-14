@@ -186,7 +186,7 @@ const send = async () => {
           ctx.eventName === 'pull_request'
             ? ctx.payload.pull_request?.html_url
             : ctx.eventName === 'release'
-            ? `${ctx.payload.repository?.html_url}/releases/tag/${ctx.ref}`
+            ? `${ctx.payload.release?.html_url}`
             : `${ctx.payload.repository?.html_url}/tree/${ctx.ref}`
       },
       author: {
