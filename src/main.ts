@@ -75,7 +75,7 @@ const temlpateData = {
     }
   ],
   $schema: 'http://adaptivecards.io/schemas/adaptive-card.json',
-  version: '1.4'
+  version: '1.2'
 }
 
 async function sleep(ms: number): Promise<unknown> {
