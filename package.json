@@ -21,7 +21,8 @@
     "adaptive-expressions": "^4.12.0",
     "adaptivecards-templating": "^2.1.0",
     "axios": "^0.21.1",
-    "cockatiel": "^2.0.1"
+    "cockatiel": "^2.0.1",
+    "eslint-plugin-eslint-comments": "^3.2.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.7",
