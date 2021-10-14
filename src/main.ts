@@ -176,7 +176,7 @@ const send = async () => {
         run_html_url: wr.data.html_url
       },
       event: {
-        type: ctx.eventName === 'pull_request' ? 'Pull request' : 'Branch',
+        type: ctx.eventName === 'pull_request' ? 'Pull request' : (ctx.eventName === 'release' ? 'Release' : 'Branch'),
         html_url:
           ctx.eventName === 'pull_request'
             ? ctx.payload.pull_request?.html_url
