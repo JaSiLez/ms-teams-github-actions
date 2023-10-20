@@ -11,17 +11,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 14, 16, 18 ]
+        node: [ 14, 16, 18, 20 ]
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Send Test node ${{ matrix.node }}
+        uses: ./
         if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          
